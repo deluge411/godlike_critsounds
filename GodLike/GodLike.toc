@@ -1,0 +1,23 @@
+## Interface: 60200
+## Title: GodLike CritSounds
+## Notes: A little fun addon for printing messages and playing sounds on critical hits. Enjoy!
+## Notes-deDE: Ein kleines Spaﬂ AddOn, welches Nachrichten und Sounds ausgiebt wenn ihr ein Ziel kritisch trefft. Viel Spaﬂ!
+
+## Notes2: All sounds were replaced by the Unreal Sounds for more excitement. If you want to use your own sounds just replace the .mp3s accordingly.
+
+## Author: Garthnait of Kil'Jaeden (EU)
+## Updated & Enhanced: Svenson of Anub'Arak (EU)
+## Updated 6.3.2: Tantalos of Blackrock (US)
+## Version: 6.32 (Dec 30, 2015)
+
+## SavedVariablesPerCharacter: GodLike_Settings
+
+
+GodLike.xml
+
+
+libs\TjOptions.lua
+libs\TjEditBox.lua
+libs\TjSlider.lua
+
+
