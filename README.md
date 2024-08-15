@@ -1,6 +1,8 @@
 # godlike_critsounds
 Redid the whole addon utilizing ACE3 libraries and updated to The War Within latest patch 11.0.2 and also works with Classic 1.15.3
 
+You can also download this addon from Curse at the following url:  https://www.curseforge.com/wow/addons/godlike-critsounds
+
 GodLike CrtiSounds is an addon that you can customize the ranges of your critical attacks and heals to play certain sounds. Replaced the old sounds with the Unreal Tournament sounds. Replace the mp3's to load your own sounds.
 
 Notes: A little fun addon for printing messages and playing sounds on critical hits. Enjoy!
