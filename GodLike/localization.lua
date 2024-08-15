@@ -1,5 +1,5 @@
 
-	GL_VERSION	=	GetAddOnMetadata("GodLike", "version")
+	GL_VERSION	=	C_AddOns.GetAddOnMetadata("GodLike", "version")
 
 if (GetLocale() == "enUS") then
 
@@ -62,9 +62,9 @@ if (GetLocale() == "enUS") then
 -- Messages
 	GL_MSG_GL			=	"|c00FFE100[GodLike]: ";
 
-	GL_MSG_CRIT1		=	"|c00FFC800YEAH!";
-	GL_MSG_CRIT2		=	"|c00FFC800OhYEAH!";
-	GL_MSG_CRIT3		=	"|c00FFC800You're really God Like!";
+	GL_MSG_CRIT1		=	"|c00FFC800ULTRA KILL!";
+	GL_MSG_CRIT2		=	"|c00FFC800MOMOMONSTER KILL!";
+	GL_MSG_CRIT3		=	"|c00FFC800GODLIKE!";
 	GL_MSG_CRIT4		=	"|c00FFC800Holy Shit! That hurts!";
 
 	GL_MSG_HEAL1		=	"|c00FFC800YEAH!";
@@ -89,23 +89,28 @@ if (GetLocale() == "enUS") then
 
 	GL_TEXT_OPT_LABEL_MAXCRIT       ="Crit Settings";
 	GL_TEXT_OPT_AUTO                ="|c00FFFFFFAutomatic Crit-Settings";
-	GL_TEXT_OPT_SETAUTO		="Set to"
-	GL_TEXT_OPT_SETAUTOHELP		="Set the max-crit to XX% of the obtained critical hit."
+	GL_TEXT_OPT_AUTOHELP            ="|c00FFFFFFTurn on/off Automatic Criticals";
+	GL_TEXT_OPT_SETAUTO				="Set to"
+	GL_TEXT_OPT_SETAUTOHELP			="Set the max-crit to XX% of the obtained critical hit. This is for Automatic only"
 	GL_TEXT_OPT_MAXCRIT             ="|c00FFFFFFMax-Crit is set to: ";
 	GL_TEXT_OPT_MAXCRITHELP         ="Sets critical-hit value";
 	GL_TEXT_OPT_MAXHEAL             ="|c00FFFFFFMax-Heal is set to: ";
 	GL_TEXT_OPT_MAXHEALHELP         ="Sets critical-heal value";
-	GL_TEXT_OPT_SETRANGE		=" Range of Sound-Output:"
+	GL_TEXT_OPT_SETRANGE		=" Range of Critical-Output Factor in %";
 	GL_TEXT_OPT_SETRANGEHELP	="This is the range, in percent from your Max-Crit, a sound will be played."
 
-	GL_TEXT_OPT_LABEL_SPELL         ="Spell Settings";
-	GL_TEXT_OPT_SPELLONLY			="|c00FFFFFFOnly recognize:";
-	GL_TEXT_OPT_SPELLONLYHELP		="Enter Spellname to filter this spell. 'melee' recognze only melee-hits. Empty or 'all' recognizes all spells";
+	GL_TEXT_OPT_LABEL_SPELL         ="Spell to Monitor";
+	GL_TEXT_OPT_SPELLONLY			="|c00FFFFFFOnly monitor this spell:";
+	GL_TEXT_OPT_SPELLONLYHELP		="Enter Spellname to filter this spell. 'Aimed Shot' will only recognize aimed shot damage or 'all' recognizes all spells";
 
 	GL_TEXT_OPT_LABEL_PACK          ="Sound Settings";
-	GL_TEXT_OPT_PACK				="|c00FFFFFFUsed Sound-Pack:";
-	GL_TEXT_OPT_PACKHELP			="Use 'english' or 'german' for the standard-sounds. Or use the name of the installed custom-sound-pack";
+	GL_TEXT_OPT_PACK				="|c00FFFFFFUsed Sound-Pack directory you want to use:";
+	GL_TEXT_OPT_PACKHELP			="Use 'english' or 'german' for the standard-sounds. Or use the name of the installed custom-sound-pack directory in the sounds folder";
 
+	GL_TEXT_OPT_LABEL_OTHER		    ="Other Settings";
+
+	GL_TEXT_OPT_SETLEVEL			="|c00FFFFFFActivate sounds this level or above (0 = any level)";
+	GL_TEXT_OPT_SETLEVELHELP		="This option is good for when doing lower level dungeons and you don't want to keep hearing the sounds because you are hitting them hard";
 
 -- Optionsmenu-Seite2
 

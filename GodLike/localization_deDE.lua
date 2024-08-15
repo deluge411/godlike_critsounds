@@ -1,5 +1,5 @@
 
-	GL_VERSION	=	GetAddOnMetadata("GodLike", "version")
+	GL_VERSION	=	C_AddOns.GetAddOnMetadata("GodLike", "version")
 
 if (GetLocale() == "deDE") then
 
@@ -59,9 +59,9 @@ if (GetLocale() == "deDE") then
 -- Messages
 	GL_MSG_GL		=	"|c00FFE100[GodLike]: |c00FFC800";
 
-	GL_MSG_CRIT1		=	"YEAH!";
-	GL_MSG_CRIT2		=	"OhYEAH!";
-	GL_MSG_CRIT3		=	"You're really God Like!";
+	GL_MSG_CRIT1		=	"ULTRA KILL!";
+	GL_MSG_CRIT2		=	"MOMOMONSTER KILL!";
+	GL_MSG_CRIT3		=	"GODLIKE!";
 	GL_MSG_CRIT4		=	"Holy Shit! That hurts!";
 
 	GL_MSG_HEAL1		=	"YEAH!";
@@ -103,6 +103,11 @@ if (GetLocale() == "deDE") then
 	GL_TEXT_OPT_LABEL_PACK          ="Sound Einstellungen";
 	GL_TEXT_OPT_PACK				="|c00FFFFFFVerwendetes Sound-Pack:";
 	GL_TEXT_OPT_PACKHELP			="Benutze 'german' oder 'english' f\195\188r die Standard-Sounds. Oder den jeweiligen Namen des Custom-Sound-Packs";
+
+	GL_TEXT_OPT_LABEL_OTHER		    ="Other Settings";
+
+	GL_TEXT_OPT_SETLEVEL			="|c00FFFFFFActivate sounds this level or above (0 = any level)";
+	GL_TEXT_OPT_SETLEVELHELP		="This option is good for when doing lower level dungeons and you don't want to keep hearing the sounds because you are hitting them hard";
 
 
 -- Optionsmenu-Seite2
