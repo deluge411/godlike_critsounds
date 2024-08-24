@@ -45,14 +45,16 @@ function Godlike:OnCombatLogEventUnfiltered()
                     if (spellName ~= nil) then
                         local SpellName = Godlike:GetSpell();
                         if(spellName ~= "Restore Mana") then
-                            --print("Unit Level: ", UnitLevel("target"));
+                            
                             if string.upper(SpellName) == string.upper("all") then
                                 local setLevelVar = tonumber(Godlike:GetSetlevel());
+                                --print("Unit Level: ", UnitLevel("target"));
+                                --print("Set Level: ", setLevelVar);
                                 if (setLevelVar == nil or setLevelVar == 0) then
                                     SpellDmg = amount;
                                     SpellName_Global = spellName;
                                     GodLike_CritDone();
-                                elseif (UnitLevel("target") == setLevelVar or UnitLevel("target") == -1) then
+                                elseif (UnitLevel("target") >= setLevelVar or UnitLevel("target") == -1) then
                                         SpellDmg = amount;
                                         SpellName = spellName;
                                         SpellName_Global = spellName;
