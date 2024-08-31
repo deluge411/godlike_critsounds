@@ -2,6 +2,7 @@
   <Script file="Libs\LibStub\LibStub.lua"/>
   <Script file="localization.lua"/>
 	<Script file="localization_deDE.lua"/>
+  <Script file="localization_zhCN.lua"/>
   <Include file="Libs\AceAddon-3.0\AceAddon-3.0.xml"/>
   <Include file="Libs\AceConsole-3.0\AceConsole-3.0.xml"/>
 </Ui>
