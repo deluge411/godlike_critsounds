@@ -100,6 +100,10 @@ if (GetLocale() == "deDE") then
 	GL_TEXT_OPT_SPELLONLY			="|c00FFFFFFBeschr\195\164nkt auf:";
 	GL_TEXT_OPT_SPELLONLYHELP		="Zaubername eingeben um nur diesen Zauber zu ber\195\188cksichtigen. 'melee' ber\195\188cksichtigt nur Nahkampf-Krits. L\195\182schen oder 'all' um alle Zauber zu ber\195\188cksichtigen";
 
+	GL_TEXT_OPT_LABEL_SPELLNOT      ="Spells to Avoid Monitoring";
+	GL_TEXT_OPT_SPELLONLYNOT		="|c00FFFFFFAvoid monitoring these spells:";
+	GL_TEXT_OPT_SPELLONLYHELPNOT	="Enter Spellname to NOT monitor. 'Arcane Shot,Aim Shot' will NOT recognize arcane shot and aim shot damage, separate spells by comma only and no quotations";
+
 	GL_TEXT_OPT_LABEL_PACK          ="Sound Einstellungen";
 	GL_TEXT_OPT_PACK				="|c00FFFFFFVerwendetes Sound-Pack:";
 	GL_TEXT_OPT_PACKHELP			="Benutze 'german' oder 'english' f\195\188r die Standard-Sounds. Oder den jeweiligen Namen des Custom-Sound-Packs";

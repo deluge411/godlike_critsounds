@@ -103,6 +103,10 @@ if (GetLocale() == "enUS") then
 	GL_TEXT_OPT_SPELLONLY			="|c00FFFFFFOnly monitor this spell:";
 	GL_TEXT_OPT_SPELLONLYHELP		="Enter Spellname to filter this spell. 'Aimed Shot' will only recognize aimed shot damage or 'all' recognizes all spells";
 
+	GL_TEXT_OPT_LABEL_SPELLNOT      ="Spells to Avoid Monitoring";
+	GL_TEXT_OPT_SPELLONLYNOT		="|c00FFFFFFAvoid monitoring these spells:";
+	GL_TEXT_OPT_SPELLONLYHELPNOT	="Enter Spellname to NOT monitor. 'Arcane Shot,Aim Shot' will NOT recognize arcane shot and aim shot damage, separate spells by comma only and no quotations";
+
 	GL_TEXT_OPT_LABEL_PACK          ="Sound Settings";
 	GL_TEXT_OPT_PACK				="|c00FFFFFFUsed Sound-Pack directory you want to use:";
 	GL_TEXT_OPT_PACKHELP			="Use 'english' or 'german' for the standard-sounds. Or use the name of the installed custom-sound-pack directory in the sounds folder";

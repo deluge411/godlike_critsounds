@@ -12,7 +12,9 @@ function Godlike:OnCombatLogEventUnfiltered()
         local healingEvents = {
             SPELL_HEAL = true,
             SPELL_PERIODIC_HEAL = true,
-            SPELL_PERIODIC_ENERGIZE = true
+            SPELL_PERIODIC_ENERGIZE = true,
+            SPELL_INTERRUPT = true,
+            SPELL_ENERGIZE = true,
         }
         -- If the subevent is not a healing event
         if not healingEvents[subevent] then
@@ -44,30 +46,54 @@ function Godlike:OnCombatLogEventUnfiltered()
                     --DEFAULT_CHAT_FRAME:AddMessage(GL_MSG_GL.. "|c00FFC800 INSIDE RANGED_DAMAGE: "..amount);
                     if (spellName ~= nil) then
                         local SpellName = Godlike:GetSpell();
-                        if(spellName ~= "Restore Mana") then
-                            
-                            if string.upper(SpellName) == string.upper("all") then
-                                local setLevelVar = tonumber(Godlike:GetSetlevel());
-                                --print("Unit Level: ", UnitLevel("target"));
-                                --print("Set Level: ", setLevelVar);
-                                if (setLevelVar == nil or setLevelVar == 0) then
-                                    SpellDmg = amount;
-                                    SpellName_Global = spellName;
-                                    GodLike_CritDone();
-                                elseif (UnitLevel("target") >= setLevelVar or UnitLevel("target") == -1) then
+                        local SpellNameNot = Godlike:GetSpellNot();
+                        local SpellsArray = {}
+
+                        for spell in string.gmatch(SpellNameNot, '([^,]+)') do
+                            table.insert(SpellsArray, spell:match("^%s*(.-)%s*$"))  -- Trim any leading/trailing whitespace
+                        end
+
+                        -- Print the array to verify
+                        --for i, spell in ipairs(SpellsArray) do
+                            --print(i, spell)
+                        --end
+                        --Validate that spellName is not in each of the values of SpellNameNot array
+                        local isNotInArray = true
+                        for i = 1, #SpellsArray do
+                            if SpellsArray[i] == spellName then
+                                isNotInArray = false
+                                break
+                            end
+                        end
+
+                        if isNotInArray then
+                            --print(spellName .. " is NOT in the array.")
+                            if(spellName ~= "Restore Mana") then
+                                if string.upper(SpellName) == string.upper("all") then
+                                    local setLevelVar = tonumber(Godlike:GetSetlevel());
+                                    --print("Unit Level: ", UnitLevel("target"));
+                                    --print("Set Level: ", setLevelVar);
+                                    if (setLevelVar == nil or setLevelVar == 0) then
                                         SpellDmg = amount;
-                                        SpellName = spellName;
                                         SpellName_Global = spellName;
                                         GodLike_CritDone();
-                                end
-                            else
-                                SpellName = Godlike:GetSpell();
-                                if string.upper(SpellName) == string.upper(spellName) then
-                                    SpellDmg = amount;
-                                    SpellName_Global = spellName;
-                                    GodLike_CritDone();
+                                    elseif (UnitLevel("target") >= setLevelVar or UnitLevel("target") == -1) then
+                                            SpellDmg = amount;
+                                            SpellName = spellName;
+                                            SpellName_Global = spellName;
+                                            GodLike_CritDone();
+                                    end
+                                else
+                                    SpellName = Godlike:GetSpell();
+                                    if string.upper(SpellName) == string.upper(spellName) then
+                                        SpellDmg = amount;
+                                        SpellName_Global = spellName;
+                                        GodLike_CritDone();
+                                    end
                                 end
                             end
+                        else
+                            --print(spellName .. " is IN the array.")
                         end
                     end
                 end
@@ -80,18 +106,40 @@ function Godlike:OnCombatLogEventUnfiltered()
                     if(resisted == true) then
                         if (spellName ~= nil) then
                             SpellName = Godlike:GetSpell();
-                            if string.upper(SpellName) == string.upper("all") then
-                                SpellDmg = amount;
-                                SpellName_Global = spellName;
-                                --[[ print("SpellName_Global: ", SpellName_Global);
-                                print("Spell name combat log: ", spellName); ]]
-                                GodLike_HealCritDone();
-                            else
-                                if string.upper(SpellName) == string.upper(spellName) then
+                            local SpellNameNot = Godlike:GetSpellNot();
+                            local SpellsArray = {}
+
+                            for spell in string.gmatch(SpellNameNot, '([^,]+)') do
+                                table.insert(SpellsArray, spell:match("^%s*(.-)%s*$"))  -- Trim any leading/trailing whitespace
+                            end
+                            -- Print the array to verify
+                            --for i, spell in ipairs(SpellsArray) do
+                                --print(i, spell)
+                            --end
+                            --Validate that spellName is not in each of the values of SpellNameNot array
+                            local isNotInArray = true
+                            for i = 1, #SpellsArray do
+                                if SpellsArray[i] == spellName then
+                                    isNotInArray = false
+                                    break
+                                end
+                            end
+
+                            if isNotInArray then
+                                --print(spellName .. " is NOT in the array.")
+                                if string.upper(SpellName) == string.upper("all") then
                                     SpellDmg = amount;
                                     SpellName_Global = spellName;
                                     GodLike_HealCritDone();
+                                else
+                                    if string.upper(SpellName) == string.upper(spellName) then
+                                        SpellDmg = amount;
+                                        SpellName_Global = spellName;
+                                        GodLike_HealCritDone();
+                                    end
                                 end
+                            else
+                                --print(spellName .. " is IN the array.")
                             end
                         end
                     end

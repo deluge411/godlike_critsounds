@@ -29,7 +29,7 @@ local defaults = {
 		Spell = "all",
 		Soundpack = "english",
 		SetRange = 55,
-		Setlevel = 70,
+		Setlevel = 0,
 		CritMsg1 = "|c00FFC800ULTRA KILL!",
 		CritMsg2 = "|c00FFC800MOMOMONSTER KILL!",
 		CritMsg3 = "|c00FFC800GODLIKE!",
@@ -140,22 +140,32 @@ local options = {
 		Spell = {
 			type = "input",
 			order = 12,
-			width = "double",
+			width = 1.3,
 			name = GL_TEXT_OPT_SPELLONLY,
 			desc = GL_TEXT_OPT_SPELLONLYHELP,
 			usage = "Aimed Shot",
 			get = "GetSpell",
 			set = "SetSpell",
 		},
+		SpellNot = {
+			type = "input",
+			order = 13,
+			width = "double",
+			name = GL_TEXT_OPT_SPELLONLYNOT,
+			desc = GL_TEXT_OPT_SPELLONLYHELPNOT,
+			usage = "Arcane Shot,Aimed Shot",
+			get = "GetSpellNot",
+			set = "SetSpellNot",
+		},
 		header3 = {
 			type = "header",
-			order = 13,
+			order = 14,
 			width = "double",
 			name = 	GL_TEXT_OPT_LABEL_OTHER,
 		},
 		Soundpack = {
 			type = "input",
-			order = 14,
+			order = 15,
 			width = "double",
 			name = GL_TEXT_OPT_PACK,
 			desc = GL_TEXT_OPT_PACKHELP,
@@ -165,7 +175,7 @@ local options = {
 		},
 		Setlevel = {
 			type = "input",
-			order = 15,
+			order = 16,
 			width = "double",
 			name = GL_TEXT_OPT_SETLEVEL,
 			desc = GL_TEXT_OPT_SETLEVELHELP,
@@ -175,13 +185,13 @@ local options = {
 		},
 		header4 = {
 			type = "header",
-			order = 16,
+			order = 17,
 			width = "double",
 			name = 	"Write all changes to file made in this panel",
 		},
 		SetButton = {
 			type = "execute",
-			order = 17,
+			order = 18,
 			name = "Save and Reload Interface",
 			width = 2.0,
 			func = function()
@@ -429,6 +439,13 @@ function Godlike:GetSpell(info)
 end
 function Godlike:SetSpell(info, value)
 	self.db.profile.Spell = value
+end
+
+function Godlike:GetSpellNot(info)
+	return self.db.profile.SpellNot
+end
+function Godlike:SetSpellNot(info, value)
+	self.db.profile.SpellNot = value
 end
 
 function Godlike:GetSoundpack(info)
