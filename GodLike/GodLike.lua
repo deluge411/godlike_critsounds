@@ -47,6 +47,9 @@ function Godlike:OnCombatLogEventUnfiltered()
                     if (spellName ~= nil) then
                         local SpellName = Godlike:GetSpell();
                         local SpellNameNot = Godlike:GetSpellNot();
+                        if SpellNameNot == nil then
+                            SpellNameNot = "";
+                        end
                         local SpellsArray = {}
 
                         for spell in string.gmatch(SpellNameNot, '([^,]+)') do
