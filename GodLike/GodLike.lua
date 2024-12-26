@@ -15,6 +15,7 @@ function Godlike:OnCombatLogEventUnfiltered()
             SPELL_PERIODIC_ENERGIZE = true,
             SPELL_INTERRUPT = true,
             SPELL_ENERGIZE = true,
+            SPELL_DISPEL = true,
         }
         -- If the subevent is not a healing event
         if not healingEvents[subevent] then
@@ -110,6 +111,9 @@ function Godlike:OnCombatLogEventUnfiltered()
                         if (spellName ~= nil) then
                             SpellName = Godlike:GetSpell();
                             local SpellNameNot = Godlike:GetSpellNot();
+                            if SpellNameNot == nil then
+                                SpellNameNot = "";
+                            end
                             local SpellsArray = {}
 
                             for spell in string.gmatch(SpellNameNot, '([^,]+)') do
