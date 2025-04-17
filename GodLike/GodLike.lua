@@ -16,6 +16,7 @@ function Godlike:OnCombatLogEventUnfiltered()
             SPELL_INTERRUPT = true,
             SPELL_ENERGIZE = true,
             SPELL_DISPEL = true,
+            SPELL_LEECH = true,
         }
         -- If the subevent is not a healing event
         if not healingEvents[subevent] then
